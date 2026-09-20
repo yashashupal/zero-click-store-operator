@@ -24,6 +24,9 @@ app = FastAPI(
 
 Base.metadata.create_all(bind=engine)
 
+from .seed import seed_database
+seed_database()
+
 
 # --------------------------------------------------
 # CORS
