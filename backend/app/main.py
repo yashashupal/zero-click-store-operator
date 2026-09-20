@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
+from .database import get_db, engine, Base
 
 from .config import settings
 from .database import get_db
@@ -20,6 +21,8 @@ app = FastAPI(
     title="Zero-Click Store Operator",
     version="1.0.0"
 )
+
+Base.metadata.create_all(bind=engine)
 
 
 # --------------------------------------------------
