@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from .database import get_db, engine, Base
 
 from .config import settings
-from .database import get_db
+# from .database import get_db
 from .models import Product, Order, OrderItem
 from .schemas import (
     ChatRequest,
